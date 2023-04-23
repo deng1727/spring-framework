@@ -290,6 +290,8 @@ configure(allprojects) { project ->
 			cacheChangingModulesFor 0, "seconds"
 		}
 		repositories {
+			mavenCentral()
+			maven { url 'https://maven.aliyun.com/repository/spring' } // 阿里云
 			maven { url 'https://maven.aliyun.com/repository/public' } // 阿里云
 			maven { url 'https://maven.aliyun.com/repository/gradle-plugin' } // 插件
 			}
@@ -430,6 +432,16 @@ configure(rootProject) {
 	tasks.named("checkstyleNohttp").configure {
 		maxHeapSize = "1g"
 	}
+//	tasks.withType(JavaCompile) {
+//		options.ignoreFailures = true
+//		options.compilerArgs += '-Xlint:-deprecation'
+//	}
+	tasks.withType(JavaCompile) {
+		options.compilerArgs << '-Xlint:deprecation'
+	}
+
+
+
 
 	publishing {
 		publications {
