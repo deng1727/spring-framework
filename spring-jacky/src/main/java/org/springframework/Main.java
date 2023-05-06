@@ -10,5 +10,6 @@ public class Main {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 		JobService jobService = (JobService)ac.getBean("jobService");
 		System.out.println("jobService : " +  jobService);
+		//?????
 	}
 }

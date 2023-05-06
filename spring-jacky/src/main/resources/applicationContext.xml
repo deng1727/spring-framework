@@ -1,24 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:aop="http://www.springframework.org/schema/aop"
-	   xmlns:tx="http://www.springframework.org/schema/tx"
-	   xmlns:context="http://www.springframework.org/schema/context"
-	   xsi:schemaLocation="
-       http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.springframework.org/schema/tx
-       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-3.0.xsd
-       http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="jobService" class="org.springframework.service.impl.JobServiceImpl"></bean>
+		<bean id="jobService" class="org.springframework.service.impl.JobServiceImpl"></bean>
 
 
 
+<!--	<bean id="datasource" class="com.alibaba.druid.pool.DruidDataSource">-->
+<!--		<property name="url" value="jdbc:mysql://rm-3nsc58907o3epw2me.mysql.rds.aliyuncs.com:3306/estuary?useUnicode=true"></property>-->
+<!--		<property name="username" value="dbadmin"></property>-->
+<!--		<property name="password" value="hE4sqSfuCQeXEXwz"></property>-->
+<!--		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>-->
+<!--	</bean>-->
+
+<!--	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--		<property name="dataSource" ref="datasource"></property>-->
+<!--		<property name="mapperLocations" value="org/springframework/spring/mapper/*.xml"></property>-->
+<!--	</bean>-->
 
 
+<!--	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--		<property name="basePackage" value="org.springframework.spring" />-->
+<!--	</bean>-->
+
+<!--	<bean id="userService" class="org.springframework.spring.service.impl.UserServiceImpl">-->
+<!--		<property name="apiInfoMapper" ref="apiInfoMapper"></property>-->
+<!--	</bean>-->
+
+	<!--    <bean id="sessionFactoryBuilder" class="org.apache.ibatis.session.SqlSessionFactoryBuilder"></bean>-->
+
+
+	<!--    <bean class="org.springframework.spring.processor.AutoBeanFactoryProcessor"></bean>-->
+	<!--    <bean class="org.springframework.spring.processor.AutoBeanProcessor"></bean>-->
+
+
+	<!--    &lt;!&ndash; 对象方法注入&ndash;&gt;-->
+	<!--    <bean id="sqlSessionFactory" factory-bean="sessionFactoryBuilder" factory-method="build">-->
+	<!--        <constructor-arg ref="inputStream"></constructor-arg>-->
+	<!--    </bean>-->
+
+	<!--    &lt;!&ndash;对象注入&ndash;&gt;-->
+	<!--    <bean id="session" factory-bean="sqlSessionFactory" factory-method="openSession"></bean>-->
+
+
+	<!--    &lt;!&ndash;注入ApiInfoMapper.class类型的&ndash;&gt;-->
+	<!--    <bean id="apiInfoMapper" factory-bean="session" factory-method="getMapper">-->
+	<!--        <constructor-arg type="java.lang.Class" value="org.springframework.spring.dao.ApiInfoMapper"></constructor-arg>-->
+	<!--    </bean>-->
+
+
+	<!--    &lt;!&ndash; 静态工厂创建的bean 用factory-method &ndash;&gt;-->
+	<!--    <bean id="inputStream"  class="org.apache.ibatis.io.Resources" factory-method="getResourceAsStream">-->
+	<!--      &lt;!&ndash;  <property name="resource" value="myBatis.xml"></property>&ndash;&gt;-->
+	<!--        <constructor-arg value="myBatis.xml"></constructor-arg>-->
+	<!--    </bean>-->
+
+
+
+
+
+
+	<!--    <bean id="apiInfoMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+	<!--        <property name="mapperInterface" value="org.springframework.spring.dao.ApiInfoMapper" />-->
+	<!--        <property name="sqlSessionFactory" ref="sqlSessionFactory" />-->
+	<!--    </bean>-->
 
 </beans>
